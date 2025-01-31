@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://github.com/KeroBeros68/Nina-Carducci-Dev/blob/master/sitemap.xml
