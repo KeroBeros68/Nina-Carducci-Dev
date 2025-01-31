@@ -16,8 +16,8 @@ Filtrage des projets par catégorie (Entreprise, Mariage, Concert).
 Formulaire de contact permettant aux visiteurs de prendre contact avec Nina Carducci pour des demandes de projet ou de collaboration.
 
 🔗 Liens
-Version avant optimisation : Voir le site original
-Version optimisée : Voir la version améliorée
+Version avant optimisation : https://nina-carducci.github.io/
+Version optimisée : https://keroberos68.github.io/Nina-Carducci-Dev/
 
 🔍 Améliorations apportées
 
