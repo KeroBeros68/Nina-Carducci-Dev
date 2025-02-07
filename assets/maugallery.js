@@ -221,10 +221,10 @@
     },
     showItemTags(gallery, position, tags) {
       var tagItems =
-        '<li class="nav-item"><button class="nav-link active active-tag"  data-images-toggle="all">Tous</button></li>';
+        '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all" tabindex="0">Tous</span></li>';
       $.each(tags, function(index, value) {
         tagItems += `<li class="nav-item active">
-                <button class="nav-link"  data-images-toggle="${value}">${value}</button></li>`;
+                <span class="nav-link"  data-images-toggle="${value}" tabindex="0">${value}</span></li>`;
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 
@@ -235,6 +235,12 @@
       } else {
         console.error(`Unknown tags position: ${position}`);
       }
+      $(document).on("keydown", ".nav-link", function(event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            $(this).click(); 
+        }
+    });
     },
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
@@ -262,3 +268,12 @@
     }
   };
 })(jQuery);
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault(); // Empêche le scroll quand on appuie sur espace
+      link.click(); // Simule un clic sur l'élément
+    }
+  });
+});
